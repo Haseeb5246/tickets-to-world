@@ -1,0 +1,7 @@
+# Deny access to all files in this directory
+Require all denied
+
+# Allow specific access
+<FilesMatch "\.php$">
+    Require local
+</FilesMatch>

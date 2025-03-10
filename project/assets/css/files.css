@@ -1,0 +1,329 @@
+:root {
+    --deep-purple: #69247C;
+    --pink-vivid: #DA498D;
+    --sunny-yellow: #FAC67A;
+    --peach-cream: #F9E6CF;
+    --charcoal-gray: #4A4A4A;
+    --white: #FFFFFF;
+    --gradient: linear-gradient(135deg, #69247C, #DA498D);
+    --box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --info-color: #17a2b8;
+    --primary-color: #69247C;
+    --secondary-color: #6c757d;
+}
+
+body {
+    background: #f5f7fa;
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    color: var(--charcoal-gray);
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+h2 {
+    background: var(--gradient);
+    color: var(--white);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+
+/* Cards Style */
+.upload-section, .create-section, .file-list, .trash-section {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.upload-section:hover, .create-section:hover {
+    transform: translateY(-5px);
+}
+
+/* Update Upload and Create Sections */
+.upload-section, .create-section {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: var(--box-shadow);
+    margin-bottom: 1rem;
+}
+
+.upload-section form, .create-section form {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+input[type="text"], input[type="file"] {
+    flex: 1;
+    padding: 0.8rem;
+    border: 2px solid var(--peach-cream);
+    border-radius: 8px;
+    font-size: 0.9rem;
+    width: auto;
+    min-width: 200px;
+    transition: all 0.3s ease;
+}
+
+/* Custom file input styling */
+input[type="file"] {
+    background: var(--white);
+    cursor: pointer;
+}
+
+input[type="file"]::-webkit-file-upload-button {
+    visibility: hidden;
+    display: none;
+}
+
+input[type="file"]::before {
+    content: 'Choose File';
+    display: inline-block;
+    background: var(--deep-purple);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+/* Management Section Headers */
+.section-header {
+    font-size: 1rem;
+    color: var(--deep-purple);
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.3rem;
+    border-bottom: 2px solid var(--peach-cream);
+    white-space: nowrap;  /* Prevents text from wrapping */
+    overflow: hidden;     /* Ensures no overflow */
+    text-overflow: ellipsis; /* Shows ... if text is too long */
+    min-width: 0;        /* Allows text to shrink properly */
+}
+
+/* File Items */
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    margin: 0.5rem 0;
+    background: #f8f9fa;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.file-item:hover {
+    background: var(--peach-cream);
+    transform: translateX(5px);
+}
+
+.file-item a {
+    color: var(--deep-purple);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.file-item a:hover {
+    color: var(--pink-vivid);
+}
+
+/* Buttons */
+button, .btn {
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    font-size: 0.9rem;
+    margin: 0 0.3rem;
+    background: var(--secondary-color);
+    color: var(--white);
+}
+
+/* Action-specific button colors */
+button[type="submit"][name="upload"],
+button[type="submit"][name="create"],
+button[type="submit"][name="create_dir"] {
+    background: var(--success-color);
+}
+
+button[name="delete"],
+button[name="permanent_delete"] {
+    background: var(--danger-color);
+}
+
+button[name="edit"] {
+    background: var(--info-color);
+}
+
+button[name="restore"] {
+    background: var(--success-color);
+}
+
+button[name="copy"],
+button[name="paste"] {
+    background: var(--info-color);
+}
+
+button[name="cut"] {
+    background: var(--warning-color);
+    color: var(--charcoal-gray);
+}
+
+/* Hover effects */
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    filter: brightness(110%);
+}
+
+/* Preview link style */
+a[target="_blank"] {
+    background: var(--warning-color);
+    color: var(--charcoal-gray);
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+a[target="_blank"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    filter: brightness(110%);
+}
+
+/* Forms */
+input[type="text"], input[type="file"], select, textarea {
+    padding: 0.8rem;
+    border: 2px solid var(--peach-cream);
+    border-radius: 8px;
+    margin: 0.5rem;
+    font-size: 0.9rem;
+    width: calc(100% - 2rem);
+    transition: all 0.3s ease;
+}
+
+input[type="text"]:focus, input[type="file"]:focus, select:focus, textarea:focus {
+    border-color: var(--pink-vivid);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(218, 73, 141, 0.1);
+}
+
+/* Editor Specific */
+textarea {
+    width: 100%;
+    min-height: 500px;
+    font-family: 'Consolas', monospace;
+    line-height: 1.6;
+    padding: 1.5rem;
+    background: #f8f9fa;
+    margin-bottom: 1.5rem;
+}
+
+/* Actions Section */
+.actions {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+/* Message Styles */
+.success, .error {
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    font-weight: 500;
+    animation: slideIn 0.3s ease;
+}
+
+.success {
+    background: rgba(105, 36, 124, 0.1);
+    color: var(--deep-purple);
+    border-left: 4px solid var(--deep-purple);
+}
+
+.error {
+    background: rgba(218, 73, 141, 0.1);
+    color: var(--pink-vivid);
+    border-left: 4px solid var(--pink-vivid);
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-10px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+    
+    .file-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .actions {
+        margin-top: 1rem;
+        width: 100%;
+        justify-content: flex-start;
+    }
+    
+    button, .btn {
+        padding: 0.6rem 1rem;
+    }
+
+    .upload-section, .create-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .upload-section form, .create-section form {
+        flex-direction: column;
+    }
+
+    input[type="text"], input[type="file"] {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .section-header {
+        font-size: 0.9rem;  /* Slightly smaller font on mobile */
+    }
+}

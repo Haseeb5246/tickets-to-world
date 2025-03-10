@@ -1,0 +1,31 @@
+User-agent: *
+Allow: /
+Allow: /uk-to-lagos.php
+Allow: /uk-to-accra.php
+Allow: /uk-to-abuja.php
+Allow: /uk-to-abidjan.php
+Allow: /about-us.php
+Allow: /contact-us.php
+Allow: /terms-and-conditions.php
+Allow: /privacy-policy.php
+
+# Disallow sensitive directories
+Disallow: /admin/
+Disallow: /includes/
+Disallow: /private/
+Disallow: /assets/css/
+Disallow: /assets/js/
+Disallow: /vendor/
+
+# Block specific files
+Disallow: /error_log
+Disallow: /*.sql$
+Disallow: /*.log$
+Disallow: /*.txt$
+Disallow: /*.md$
+Disallow: /*.json$
+Disallow: /*.config$
+Disallow: /*.env$
+
+# Allow sitemap
+Sitemap: https://theticketstoworld.co.uk/sitemap.xml
